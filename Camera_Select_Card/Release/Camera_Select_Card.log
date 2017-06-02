@@ -1,71 +1,49 @@
-﻿生成启动时间为 2017/5/31 16:52:27。
-     1>项目“C:\Users\teng\working\Camera_Select_Card\Camera_Select_Card\Camera_Select_Card.vcxproj”在节点 2 上(rebuild 个目标)。
-     1>_PrepareForClean:
-         正在删除文件“Release\Camera_Select_Card.lastbuildstate”。
-       InitializeBuildStatus:
+﻿生成启动时间为 2017/6/2 14:35:54。
+     1>项目“C:\Users\teng\working\Camera_Select_Card\Camera_Select_Card\Camera_Select_Card.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
          正在创建“Release\Camera_Select_Card.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\Camera_Select_Card.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\Camera_Select_Card.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Camera_Select_Card.cpp Camera_Select_CardDlg.cpp Comm.cpp MatShowAndJPG2Mat.cpp OperDobot.cpp OperDobot2.cpp
-         Camera_Select_Card.cpp
+         所有输出均为最新。
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\Camera_Select_Card.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Camera_Select_CardDlg.cpp
          Camera_Select_CardDlg.cpp
      1>c:\users\teng\working\opencv\tags\2.4.0\build\install\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : 参见“fopen”的声明
-     1>Camera_Select_CardDlg.cpp(466): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>Camera_Select_CardDlg.cpp(467): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(568): warning C4305: “-=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(570): warning C4305: “-=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(572): warning C4305: “-=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(574): warning C4305: “-=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(577): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(579): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(581): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(583): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(587): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(589): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(591): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(593): warning C4305: “+=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(597): warning C4305: “-=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(599): warning C4305: “-=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(601): warning C4305: “-=”: 从“double”到“float”截断
-     1>Camera_Select_CardDlg.cpp(885): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>Camera_Select_CardDlg.cpp(468): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(569): warning C4305: “-=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(571): warning C4305: “-=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(573): warning C4305: “-=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(575): warning C4305: “-=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(578): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(580): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(582): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(584): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(588): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(590): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(592): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(594): warning C4305: “+=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(598): warning C4305: “-=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(600): warning C4305: “-=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(602): warning C4305: “-=”: 从“double”到“float”截断
+     1>Camera_Select_CardDlg.cpp(886): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
-     1>Camera_Select_CardDlg.cpp(899): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>Camera_Select_CardDlg.cpp(900): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
-     1>Camera_Select_CardDlg.cpp(902): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>Camera_Select_CardDlg.cpp(903): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
-     1>Camera_Select_CardDlg.cpp(905): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>Camera_Select_CardDlg.cpp(906): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
-     1>Camera_Select_CardDlg.cpp(929): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(934): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(939): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(950): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(955): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(960): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(969): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(973): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>Camera_Select_CardDlg.cpp(978): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-         Comm.cpp
-         MatShowAndJPG2Mat.cpp
-     1>c:\users\teng\working\opencv\tags\2.4.0\build\install\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : 参见“fopen”的声明
-         OperDobot.cpp
-     1>OperDobot.cpp(36): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
-     1>OperDobot.cpp(81): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
-     1>OperDobot.cpp(58): warning C4101: “i”: 未引用的局部变量
-     1>OperDobot.cpp(184): warning C4305: “初始化”: 从“double”到“float”截断
-     1>OperDobot.cpp(184): warning C4305: “初始化”: 从“double”到“float”截断
-     1>OperDobot.cpp(581): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
-     1>OperDobot.cpp(583): warning C4018: “>”: 有符号/无符号不匹配
-         OperDobot2.cpp
-     1>OperDobot2.cpp(311): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>Camera_Select_CardDlg.cpp(930): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(935): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(940): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(951): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(956): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(961): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(970): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(974): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>Camera_Select_CardDlg.cpp(979): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
        ResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D NDEBUG /D _AFXDLL /l"0x0804" /IRelease\ /nologo /fo"Release\Camera_Select_Card.res" Camera_Select_Card.rc 
+         所有输出均为最新。
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\teng\working\Camera_Select_Card\Release\Camera_Select_Card.exe" /INCREMENTAL:NO /NOLOGO opencv_calib3d240.lib opencv_contrib240.lib opencv_core240.lib opencv_features2d240.lib opencv_flann240.lib opencv_gpu240.lib opencv_highgui240.lib opencv_imgproc240.lib opencv_legacy240.lib opencv_ml240.lib opencv_objdetect240.lib opencv_ts240.lib opencv_video240.lib libjpeg.lib /NODEFAULTLIB:LIBCMTD.lib /MANIFEST /ManifestFile:"Release\Camera_Select_Card.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\teng\working\Camera_Select_Card\Release\Camera_Select_Card.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\teng\working\Camera_Select_Card\Release\Camera_Select_Card.lib" /MACHINE:X86 Release\Camera_Select_Card.res
          Release\Camera_Select_Card.obj
@@ -83,8 +61,8 @@
        FinalizeBuildStatus:
          正在删除文件“Release\Camera_Select_Card.unsuccessfulbuild”。
          正在对“Release\Camera_Select_Card.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“C:\Users\teng\working\Camera_Select_Card\Camera_Select_Card\Camera_Select_Card.vcxproj”(rebuild 个目标)的操作。
+     1>已完成生成项目“C:\Users\teng\working\Camera_Select_Card\Camera_Select_Card\Camera_Select_Card.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:07.26
+已用时间 00:00:02.57

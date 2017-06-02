@@ -419,7 +419,7 @@ unsigned int __stdcall Thread_Selection_Running(void * param)
 	CDobotPoint pn = {107.39f,-236.47f,10.0f};
 	CWnd *pwnd = g_dlg->GetDlgItem(IDC_BUTTON_START_SELECTION);
 	static bool b = false;
-	Mat view,rview, map1, map2;
+	Mat map1, map2;
 	b=!b;
 	if(b)
 	{
@@ -438,6 +438,7 @@ unsigned int __stdcall Thread_Selection_Running(void * param)
 
 while(b)
 {
+	Mat view;
 	g_cap>>view;
 	if(!view.data)
 	{
@@ -503,12 +504,12 @@ int FromCameraGetData()
 	g_cap>>img;
 	FileStorage fs2("config/camera.yml", FileStorage::READ);
 	int frameCount = (int)fs2["nframes"];
-	std::string date;
+	string date;
 	fs2["calibration_time"] >> date;
 	Mat cameraMatrix, distCoeffs;
 	fs2["camera_matrix"] >> cameraMatrix;
 	fs2["distortion_coefficients"] >> distCoeffs;
-	Mat view,rview, map1, map2;
+	Mat map1, map2;
 	initUndistortRectifyMap(cameraMatrix, distCoeffs, Mat(),getOptimalNewCameraMatrix(cameraMatrix, distCoeffs, img.size(), 1, img.size(), 0),img.size(), CV_16SC2, map1, map2);
 	
 	g_width = img.size().width;
