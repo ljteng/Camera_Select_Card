@@ -135,7 +135,7 @@ cinfo.err = jpeg_std_error(&jerr);
 jpeg_create_decompress(&cinfo);
 
 //jpeg_stdio_mem_src(&cinfo, (char *)jpegData, jpegSize);
-jpeg_mem_src(&cinfo, jpegData, jpegSize);  
+jpeg_mem_src(&cinfo, (uchar *)jpegData, jpegSize);  
 
 jpeg_read_header(&cinfo, TRUE);
 
@@ -188,7 +188,7 @@ Mat Jpeg2Mat(const uchar *jpegData, int jpegSize)
 	struct jpeg_decompress_struct cinfo;
 	cinfo.err = jpeg_std_error(&jerr);
 	jpeg_create_decompress(&cinfo);
-	jpeg_mem_src(&cinfo, jpegData, jpegSize);  
+	jpeg_mem_src(&cinfo, (uchar *)jpegData, jpegSize);  
 	
 	jpeg_read_header(&cinfo, TRUE);
 	jpeg_start_decompress(&cinfo);

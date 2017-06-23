@@ -11,6 +11,7 @@ class CCamera_Select_CardDlg : public CDialogEx
 // 构造
 public:
 	CCamera_Select_CardDlg(CWnd* pParent = NULL);	// 标准构造函数
+	bool SearchCOM(char *pName,const char *pFindName);
 
 // 对话框数据
 	enum { IDD = IDD_CAMERA_SELECT_CARD_DIALOG };

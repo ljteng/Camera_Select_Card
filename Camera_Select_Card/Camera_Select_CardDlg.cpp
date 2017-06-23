@@ -7,11 +7,16 @@
 #include <list>
 #include <iostream>
 #include <io.h>
+#include <Setupapi.h>
+#include <devguid.h>
 #include "Camera_Select_Card.h"
 #include "Camera_Select_CardDlg.h"
 #include "afxdialogex.h"
 #include "OperDobot2.h"
 #include "MatShowAndJPG2Mat.h"
+
+#pragma  comment(lib,   "setupapi")
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -677,12 +682,57 @@ BOOL CCamera_Select_CardDlg::OnInitDialog()
 		return TRUE;
 	} 
 	Load3Point();
-	string strCom = "//./COM15";
+
+	char sComName[8] = {0}; 
+	//SearchCOM(sComName,"Arduino Mega 2560");//"USB-SERIAL CH340" 
+	SearchCOM(sComName,"USB-SERIAL CH340"); 
+	CString strCom1; 
+	strCom1.Format( "//./%s",sComName); 
+	string strCom = (LPCTSTR)strCom1;
 	g_dobot->SetCOM(strCom);
 namedWindow("Video");
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
+bool CCamera_Select_CardDlg::SearchCOM(char *pName,const char *pFindName)  
+{ 
+	bool bArduino = false; 
+	//   得到设备信息集     
+	HDEVINFO   hDevInfo   =   SetupDiGetClassDevs(     
+		(LPGUID)&GUID_DEVCLASS_PORTS,NULL,0,DIGCF_PRESENT/*   |   DIGCF_ALLCLASSES*/);     
+    if(hDevInfo==INVALID_HANDLE_VALUE) 
+    { 
+        printf("Error!   SetupDiGetClassDevs()   return   %d\n",   GetLastError());     
+        SetupDiDestroyDeviceInfoList(hDevInfo);     
+        return     0;         
+    }     
+    TCHAR   szBuf[MAX_PATH];     
+    SP_DEVINFO_DATA   spDevInfoData   =   {sizeof(SP_DEVINFO_DATA)};     
+    //   开始列举设备     
+    DWORD   i = 0;  
+    for(i = 0;SetupDiEnumDeviceInfo(hDevInfo, i,&spDevInfoData);   i++)     
+    {     
+		//   得到设备名称     
+		if(SetupDiGetDeviceRegistryProperty(hDevInfo,&spDevInfoData,SPDRP_FRIENDLYNAME,NULL,(PBYTE)szBuf, MAX_PATH,NULL)) 
+        {         
+			if(memcmp(szBuf,pFindName,strlen(pFindName)) == 0)//过滤虚拟串口 
+			{ 
+				string strPort = szBuf; 
+				int nPos1,nPos2; 
+				nPos1 = strPort.find("(",0); 
+				nPos2 = strPort.find(")",nPos1); 
+				strPort = strPort.substr(nPos1+1,nPos2-nPos1-1); 
+				OperDobot::strTrim(strPort); 
+				strcpy(pName,strPort.c_str()); 
+				bArduino = true; 
+				break; 
+			} 
+        } 
+	} 
+	return bArduino; 
+
+
+} 
 void CCamera_Select_CardDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
