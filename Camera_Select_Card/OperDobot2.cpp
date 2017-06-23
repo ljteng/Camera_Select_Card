@@ -112,7 +112,7 @@ void OperDobot2::Move2AbsolutePosition(const CDobotPoint &pt,float angle)
 	}
 	else if(nRet == be.iLen)
 	{
-		logInfo("byteSendData data succeed");
+		//logInfo("byteSendData data succeed");
 	}
 	for(int i = 0; i < be.iLen; i++)
 	{
@@ -307,9 +307,9 @@ int OperDobot2::ReadFromDobot()
 		}
 		else
 		{
-			char sLog[64] = {0};
-			sprintf(sLog,"check failure,c=%d,d=%d",c,d);
-			(*logInfo)(sLog);
+			//char sLog[64] = {0};
+			//sprintf(sLog,"check failure,c=%d,d=%d",c,d);
+			//(*logInfo)(sLog);
 			if(c == -128 && d==-128)
 			{
 				delete [] pData;

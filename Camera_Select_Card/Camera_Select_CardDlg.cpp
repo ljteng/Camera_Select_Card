@@ -256,12 +256,15 @@ Mat Operater(const Mat &gray)
 	//return detected_edges;
 	Mat img_bin;
 	threshold(detected_edges,img_bin,0,255,CV_THRESH_BINARY |CV_THRESH_OTSU);
+return img_bin;
+/*
     Mat elementX = getStructuringElement(MORPH_RECT, Size(3, 3),Point(-1,-1));
     Mat m_ResImg;
     dilate(img_bin, m_ResImg,elementX,Point(-1,-1),1);
 	//erode(m_ResImg, m_ResImg,elementX,Point(-1,-1),1);
 	//dilate(m_ResImg, m_ResImg,elementX,Point(-1,-1),1);	
 	return m_ResImg;
+*/
 }
 Mat rotateImage(const Mat &img, double degree,int iWidth,int iHeight)
 {
@@ -332,7 +335,7 @@ vector<IMAGE_ELEMEMT>  GetElememtFromImg(const Mat &car_img)
 	while (itc!=contours.end()) 
 	{	 
 		double tmparea = fabs(contourArea(*itc));
-		RotatedRect minRect = minAreaRect(*itc);  
+		RotatedRect minRect = minAreaRect(*itc); 
 		Point2f vertices[4];
 		minRect.points(vertices); //获得最小外接矩形4个点
 		double L1 = sqrt((vertices[0].x-vertices[1].x) * (vertices[0].x-vertices[1].x) + (vertices[0].y-vertices[1].y) * (vertices[0].y-vertices[1].y));
@@ -365,18 +368,21 @@ vector<IMAGE_ELEMEMT>  GetElememtFromImg(const Mat &car_img)
 		double Afa = (4 * CV_PI *  tmparea)/(contLenth * contLenth);//与圆的近似度
 
 		Rect rt = boundingRect(*itc);
+		Moments m = moments( *itc, false );
+		double fXC = m.m10/m.m00;
+		double fYC = m.m01/m.m00;//轮廓的质心
 			
 		if(L2 > 8*L1)
 			itc = contours.erase(itc);
-		else if( L1< g_width/100.0)
+		else if( L1< g_width/25.0)
 			itc = contours.erase(itc);
 		else if(L2 > g_height/2.0)
 			itc = contours.erase(itc);
+		else if(fYC > car_img.size().height*5/6.0 || fYC < car_img.size().height/6.0)
+			itc = contours.erase(itc);
 		else
 		{
-			Moments m = moments( *itc, false );
-			double fXC = m.m10/m.m00;
-			double fYC = m.m01/m.m00;//轮廓的质心
+
 			Mat image_roi = car_img(rt).clone();
 			Mat parMat = rotateImage(image_roi, angle,(int)L2,(int)L1);
 			/*
@@ -384,6 +390,7 @@ vector<IMAGE_ELEMEMT>  GetElememtFromImg(const Mat &car_img)
 			sprintf_s(sFile,"%d.jpg",itc-contours.begin());
 			imwrite(sFile,parMat);
 			*/
+			//convexHull(
 			float fHaverage = checkHSVColor(parMat.clone());
 
 			cvtColor(parMat,parMat,CV_BGR2GRAY);
@@ -499,7 +506,6 @@ int FromCameraGetData()
 		AfxMessageBox("打开摄像头失败!");
 		return -1;
 	}
-	
 	Mat img;
 	g_cap>>img;
 	FileStorage fs2("config/camera.yml", FileStorage::READ);
@@ -511,7 +517,6 @@ int FromCameraGetData()
 	fs2["distortion_coefficients"] >> distCoeffs;
 	Mat map1, map2;
 	initUndistortRectifyMap(cameraMatrix, distCoeffs, Mat(),getOptimalNewCameraMatrix(cameraMatrix, distCoeffs, img.size(), 1, img.size(), 0),img.size(), CV_16SC2, map1, map2);
-	
 	g_width = img.size().width;
 	g_height = img.size().height;
 
@@ -539,12 +544,23 @@ int FromCameraGetData()
 		pDC->LineTo(rect.Width(),int(rect.Height()/2.0));
 		pDC->MoveTo(int(rect.Width()/2.0),0);
 		pDC->LineTo(int(rect.Width()/2.0),rect.Height());
+		pDC->MoveTo(10,int(rect.Height()/6.0));
+		pDC->LineTo(rect.Width()-10,int(rect.Height()/6.0));
+		int R = (rect.Height()/2.0-rect.Height()/6.0)/2;
+		int CXL = 10 + R;
+		int CYL = rect.Height() - rect.Height()/6.0 - R;
+		pDC->MoveTo(10,int(rect.Height()/6.0));
+		pDC->LineTo(CXL-R,CYL);
+		pDC->AngleArc(CXL,CYL,R,180,90);
+		int CXR = rect.Width() - 10 - R;
+		int CYR = CYL;
+		pDC->AngleArc(CXR,CYR,R,270,90);
+		pDC->LineTo(rect.Width()-10,int(rect.Height()/6.0));
 		pDC->SelectObject(pOldPen);
 		delete penXY;
 		pWnd1->ReleaseDC(pDC);
-
 		//Sleep(30);
-		if(waitKey(30) >=0)  
+		if(waitKey(30) >=0)
 			g_bConnected = false;
 		//cvReleaseImage(&Show1);
 	}
